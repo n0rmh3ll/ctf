@@ -1,0 +1,49 @@
+/* General Styles */
+body {
+    background-color: black;
+    color: green;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #0f0f0f;
+}
+
+h1, h2, h3 {
+    color: lightgreen;
+}
+
+a {
+    color: lightgreen;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Home Page Styles */
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.blog-preview {
+    background: #121212;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.blog-preview h3 {
+    margin-top: 0;
+}
+
+.blog-preview p {
+    font-size: 0.9em;
+}

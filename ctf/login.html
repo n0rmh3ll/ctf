@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login {
+            background: #222;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+            width: 300px;
+        }
+        .login h2 {
+            color: lightgreen;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login input[type="text"], 
+        .login input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            background: #333;
+            color: green;
+            border-radius: 5px;
+        }
+        .login input[type="submit"] {
+            background: green;
+            color: black;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+        .login input[type="submit"]:hover {
+            background: lightgreen;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <input type="submit" value="Login">
+        </form>
+        <div id="errorMessage" class="error-message"></div>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevent the form from reloading the page
+
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (username === "rabbit" && password === "whoareyou") {
+                // Redirect to dashboard.html on successful login
+                window.location.href = "dashboard.html";
+            } else {
+                // Display error message on failed login
+                document.getElementById("errorMessage").textContent = "Invalid username or password.";
+            }
+        });
+    </script>
+</body>
+</html>
+
